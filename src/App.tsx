@@ -11,7 +11,7 @@ const App: React.FC = (): JSX.Element => {
     <Box>
       <Navbar />
 
-      <Stack direction="row" spacing={2} justifyContent="space-between">
+      <Stack direction="row" justifyContent="space-between">
         <Sidebar />
         <Feed />
         <RightBar />
