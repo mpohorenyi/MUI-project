@@ -13,7 +13,11 @@ import {
   Typography,
 } from '@mui/material';
 
-export const Post: React.FC = () => {
+type Props = {
+  randomImgId: number;
+};
+
+export const Post: React.FC<Props> = ({ randomImgId }) => {
   return (
     <Card elevation={2}>
       <CardHeader
@@ -34,7 +38,7 @@ export const Post: React.FC = () => {
         component="img"
         height="20%"
         // eslint-disable-next-line max-len
-        image="https://images.pexels.com/photos/547114/pexels-photo-547114.jpeg"
+        image={`https://picsum.photos/1280/720?random=${randomImgId}`}
         alt="Post Photo"
       />
       <CardContent>
