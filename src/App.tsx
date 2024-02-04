@@ -5,6 +5,7 @@ import { Feed } from './components/Feed';
 import { Navbar } from './components/Navbar';
 import { RightBar } from './components/RightBar';
 import { Sidebar } from './components/Sidebar';
+import { AddPost } from './components/AddPost';
 
 const App: React.FC = (): JSX.Element => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = (): JSX.Element => {
         <Feed />
         <RightBar />
       </Stack>
+      <AddPost />
     </Box>
   );
 };
