@@ -22,9 +22,7 @@ export const Post: React.FC<Props> = ({ randomImgId }) => {
     <Card elevation={2}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
-            R
-          </Avatar>
+          <Avatar sx={{ bgcolor: 'red' }} src="https://i.pravatar.cc/475" />
         }
         action={
           <IconButton aria-label="settings">

@@ -31,6 +31,7 @@ const style = {
   bgcolor: 'background.paper',
   border: '1px solid #000',
   borderRadius: 5,
+  color: 'text.primary',
   boxShadow: 24,
   p: 4,
 };
@@ -71,7 +72,9 @@ export const AddPost: React.FC = () => {
               src="https://i.pravatar.cc/175"
               sx={{ width: 30, height: 30 }}
             />
-            <Typography variant="body1">John Doe</Typography>
+            <Typography variant="body1" color="text.secondary">
+              John Doe
+            </Typography>
           </UserBox>
           <TextField
             sx={{ width: '100%' }}

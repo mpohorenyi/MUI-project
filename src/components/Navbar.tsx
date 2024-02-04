@@ -63,7 +63,10 @@ export const Navbar: React.FC = () => {
             sx={{ p: 1 }}
             onClick={handleClick}
           >
-            <Avatar sx={{ width: 32, height: 32 }} />
+            <Avatar
+              sx={{ width: 32, height: 32 }}
+              src="https://i.pravatar.cc/782"
+            />
           </IconButton>
         </Box>
         <Menu

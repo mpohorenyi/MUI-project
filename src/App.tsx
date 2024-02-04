@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Box, Stack } from '@mui/material';
+import {
+  Box,
+  PaletteMode,
+  Stack,
+  ThemeProvider,
+  createTheme,
+} from '@mui/material';
+import { AddPost } from './components/AddPost';
 import { Feed } from './components/Feed';
 import { Navbar } from './components/Navbar';
 import { RightBar } from './components/RightBar';
 import { Sidebar } from './components/Sidebar';
-import { AddPost } from './components/AddPost';
 
 const App: React.FC = (): JSX.Element => {
-  return (
-    <Box>
-      <Navbar />
+  const [mode, setMode] = useState<PaletteMode>('light');
 
-      <Stack direction="row" justifyContent="space-between">
-        <Sidebar />
-        <Feed />
-        <RightBar />
-      </Stack>
-      <AddPost />
-    </Box>
+  const handleTheme = (): void => {
+    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <Box bgcolor="background.default" color="text.primary">
+        <Navbar />
+
+        <Stack direction="row" justifyContent="space-between">
+          <Sidebar changeTheme={handleTheme} />
+          <Feed />
+          <RightBar />
+        </Stack>
+        <AddPost />
+      </Box>
+    </ThemeProvider>
   );
 };
 

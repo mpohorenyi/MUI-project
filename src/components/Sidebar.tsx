@@ -30,7 +30,11 @@ const listCategory = [
   { title: 'Profile', icon: <AccountBox /> },
 ];
 
-export const Sidebar: React.FC = () => {
+type Props = {
+  changeTheme: () => void;
+};
+
+export const Sidebar: React.FC<Props> = ({ changeTheme }) => {
   return (
     <Box flex={1} sx={{ display: { xs: 'none', sm: 'block' } }}>
       <List>
@@ -45,7 +49,7 @@ export const Sidebar: React.FC = () => {
           <ListItemIcon>
             <DarkMode />
           </ListItemIcon>
-          <Switch />
+          <Switch onChange={() => changeTheme()} />
         </ListItem>
       </List>
     </Box>
